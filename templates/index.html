@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casio FX-991EX Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="header">
+                <h1>fx-991EX</h1>
+                <p>Scientific Calculator</p>
+            </div>
+            
+            <!-- Display Screen -->
+            <div class="screen-container">
+                <div class="expression-display" id="expressionDisplay"></div>
+                <div class="result-display" id="resultDisplay">0</div>
+            </div>
+            
+            <!-- Mode Indicators -->
+            <div class="mode-bar">
+                <div class="mode-selector">
+                    <button class="mode-btn active" data-mode="DEG">DEG</button>
+                    <button class="mode-btn" data-mode="RAD">RAD</button>
+                    <button class="mode-btn" data-mode="GRAD">GRAD</button>
+                </div>
+                <div class="memory-indicator">M: <span id="memoryValue">0</span></div>
+            </div>
+            
+            <!-- Buttons Container -->
+            <div class="buttons-grid">
+                <!-- Row 1 -->
+                <button class="btn btn-function" data-func="(">（</button>
+                <button class="btn btn-function" data-func=")">）</button>
+                <button class="btn btn-function" data-func="^">x^y</button>
+                <button class="btn btn-delete" id="btnDelete">DEL</button>
+                <button class="btn btn-delete" id="btnClear">AC</button>
+                
+                <!-- Row 2 -->
+                <button class="btn btn-function" data-func="factorial(">n!</button>
+                <button class="btn btn-function" data-func="sqrt(">√</button>
+                <button class="btn btn-function" data-func="cbrt(">³√</button>
+                <button class="btn btn-function" data-func="sin(">sin</button>
+                <button class="btn btn-function" data-func="cos(">cos</button>
+                
+                <!-- Row 3 -->
+                <button class="btn btn-function" data-func="log(">log</button>
+                <button class="btn btn-function" data-func="ln(">ln</button>
+                <button class="btn btn-operator" data-operator="/">÷</button>
+                <button class="btn btn-function" data-func="mod(">mod</button>
+                <button class="btn btn-function" data-func="exp(">e^x</button>
+                
+                <!-- Row 4 -->
+                <button class="btn btn-digit" data-digit="7">7</button>
+                <button class="btn btn-digit" data-digit="8">8</button>
+                <button class="btn btn-digit" data-digit="9">9</button>
+                <button class="btn btn-operator" data-operator="*">×</button>
+                <button class="btn btn-function" data-func="tan(">tan</button>
+                
+                <!-- Row 5 -->
+                <button class="btn btn-digit" data-digit="4">4</button>
+                <button class="btn btn-digit" data-digit="5">5</button>
+                <button class="btn btn-digit" data-digit="6">6</button>
+                <button class="btn btn-operator" data-operator="-">−</button>
+                <button class="btn btn-function" data-func="asin(">sin⁻¹</button>
+                
+                <!-- Row 6 -->
+                <button class="btn btn-digit" data-digit="1">1</button>
+                <button class="btn btn-digit" data-digit="2">2</button>
+                <button class="btn btn-digit" data-digit="3">3</button>
+                <button class="btn btn-operator" data-operator="+">+</button>
+                <button class="btn btn-function" data-func="acos(">cos⁻¹</button>
+                
+                <!-- Row 7 -->
+                <button class="btn btn-digit" data-digit="0">0</button>
+                <button class="btn btn-digit" data-digit=".">.</button>
+                <button class="btn btn-digit" data-digit="π" data-value="pi">π</button>
+                <button class="btn btn-digit" data-digit="e" data-value="e">e</button>
+                <button class="btn btn-function" data-func="atan(">tan⁻¹</button>
+                
+                <!-- Row 8 -->
+                <button class="btn btn-memory" id="btnMAdd">M+</button>
+                <button class="btn btn-memory" id="btnMSub">M−</button>
+                <button class="btn btn-memory" id="btnMStore">M=</button>
+                <button class="btn btn-memory" id="btnMClear">MC</button>
+                <button class="btn btn-memory" id="btnMRecall">MR</button>
+                
+                <!-- Row 9 -->
+                <button class="btn btn-equals" id="btnEquals" style="grid-column: span 5;">=</button>
+            </div>
+            
+            <!-- Info Panel -->
+            <div class="info-panel">
+                <div class="info-header">Available Functions</div>
+                <div class="functions-list" id="functionsList">
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
+</body>
+</html>
