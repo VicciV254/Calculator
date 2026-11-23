@@ -222,16 +222,7 @@ class CalculatorEngine:
             return False
     
     def evaluate(self, expr: str, angle_mode: str = 'DEG') -> Union[float, str]:
-        """
-        Evaluate a mathematical expression
-        
-        Args:
-            expr: Mathematical expression to evaluate
-            angle_mode: 'DEG', 'RAD', or 'GRAD'
-        
-        Returns:
-            Calculated result
-        """
+        """Expression syntax and angle modes: docs/reference.md."""
         try:
             if not isinstance(expr, str) or not expr.strip():
                 raise ValueError("Invalid expression")

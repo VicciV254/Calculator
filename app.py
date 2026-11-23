@@ -20,12 +20,7 @@ def index():
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
-    """
-    Handle calculation requests
-    Expects JSON with:
-    - expression: mathematical expression to evaluate
-    - angle_mode: 'DEG', 'RAD', or 'GRAD' (optional, defaults to 'DEG')
-    """
+    """Request and response: docs/reference.md#post-calculate."""
     try:
         data = request.get_json()
         expression = data.get('expression', '')
